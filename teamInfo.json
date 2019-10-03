@@ -1,0 +1,124 @@
+
+{ "teams":	
+	[
+	
+		{	"id": 64, 
+			"gf_position": 1,
+			"name": "Liverpool FC"
+		},
+		
+		{	"id": 57,
+			"gf_position": 2,
+			"name": "Arsenal FC"
+		},
+
+		{	"id": 65, 
+			"gf_position": 3,
+			"name": "Manchester City FC"
+		},
+ 
+		{	"id": 66, 
+			"gf_position": 4,
+			"name": "Manchester United FC"
+		},
+
+ 
+		{	"id": 62, 
+			"gf_position": 5,
+			"name": "Everton FC"
+		},
+
+ 
+		{	"id": 338, 
+			"gf_position": 6,
+			"name": "Leicester City FC"
+		},
+
+ 
+		{	"id": 76, 
+			"gf_position": 7,
+			"name": "Wolverhampton Wanderers FC"
+		},
+
+ 
+		{	"id": 73, 
+			"gf_position": 8,
+			"name": "Tottenham Hotspur FC"
+		},
+
+ 
+		{	"id": 346, 
+			"gf_position": 9,
+			"name": "Watford FC"
+		},
+
+ 
+		{	"id": 354, 
+			"gf_position": 10,
+			"name": "Crystal Palace FC"
+		},
+
+ 
+		{	"id": 61, 
+			"gf_position": 11,
+			"name": "Chelsea FC"
+		},
+
+ 
+		{	"id": 67, 
+			"gf_position": 12,
+			"name": "Newcastle United FC"
+		},
+
+ 
+		{	"id": 563, 
+			"gf_position": 13,
+			"name": "West Ham United FC"
+		},
+
+ 
+		{	"id": 397, 
+			"gf_position": 14,
+			"name": "Brighton & Hove Albion FC"
+		},
+
+ 
+		{	"id": 340, 
+			"gf_position": 15,
+			"name": "Southampton FC"
+		},
+
+ 
+		{	"id": 328, 
+			"gf_position": 16,
+			"name": "Burnley FC"
+		},
+
+ 
+		{	"id": 1044, 
+			"gf_position": 17,
+			"name": "AFC Bournemouth"
+		},
+
+ 
+		{	"id": 356, 
+			"gf_position": 18,
+			"name": "Sheffield United FC"
+		},
+
+ 
+		{	"id": 68, 
+			"gf_position": 19,
+			"name": "Norwich City FC"
+		},
+
+ 
+		{	"id": 58, 
+			"gf_position": 20,
+			"name": "Aston Villa FC"
+		}
+
+
+	]	
+	
+}

@@ -1,55 +1,19 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[1]:
+# In[3]:
 
 
 import json
+import sys
 
 
-# In[6]:
-
-
-with open ('jsonOutput/6standings.json', 'r') as f:
-    standings = json.load(f)
-
-
-# In[44]:
-
-
-with open ('jsonOutput/6schedule.json', 'r') as g:
-    schedule = json.load(g)
-
-
-# In[43]:
-
-
-#Pay attention to the nesting of dictionary values.
-
-#for team in standings['standings'][0]['table']:
-#    print("%d: %s with ID:%d" % (team['position'], team['team']['name'], team['team']['id']))
-
-
-# In[52]:
-
-
-#for x in schedule['matches'][0]:
-#    print("%s" % x)
-
-
-# In[56]:
-
-
-#for match in schedule['matches']:
-#    print("%s vs. %s" % (match['homeTeam']['name'], match['awayTeam']['name']))
-
-
-# In[138]:
+# In[4]:
 
 
 #Returns the team higher in the ladder and the difference in places between the pair.
 
-def bestestTeam (teamIDs):
+def bestestTeam (teamIDs, standings):
     homeName="";   awayName=""; #Clunky, generate a team/ID lookup table to be imported into all bots.
     homePoints=-1; awayPoints=-1
     for team in standings['standings'][0]['table']:
@@ -73,36 +37,61 @@ def bestestTeam (teamIDs):
         
 
 
-# In[142]:
+# In[2]:
 
 
-def doPredict():
+#Takes the schedule and standing parsed dictionaries. Runs through the schedule, pulling out team-ids and running the
+#bestestTeam function to return the higher team. Returns a list of pairs returned from the iterated bestestTeam function.
+#i.e. (Winning team name, points seperating)
+
+def doTableBotPredict(matchday, standings):
     
     predictions=[]
     
-    for match in schedule['matches']:
+    for match in matchday['matches']:
         predictions.append(
             bestestTeam((match['homeTeam']['id'], 
-                         match['awayTeam']['id']))
+                         match['awayTeam']['id']), standings)
                             )
-            
-    for p in predictions:
-        print ("%s, %d point(s) seperate the teams" % (p[0], p[1]))
+    
+    return predictions
         
     
 
 
 
-# In[143]:
+# In[5]:
 
 
-doPredict()
+#Runs the prediction. The argument is a list of standings .json file and schedule .json file to be parsed in. Prints the
+#resulting predictions in formatted strings.
+
+def main(args):
+    
+    with open (args[0], 'r') as f:
+        matchday = json.load(f)
+    
+    with open (args[1], 'r') as g:
+        standings = json.load(g)
+    
+    for p in doTableBotPredict(matchday,standings):
+        print ("%s, %d point(s) seperate the teams" % (p[0], p[1]))
+    
+
+
+# In[7]:
+
+
+#If run as a standalone script. Note the argv[1:] skips the first argument which is the script name
+
+if __name__=="__main__":
+    main(sys.argv[1:])
+    
+    
 
 
 # In[ ]:
 
 
 
-    
-    
 
