@@ -1,0 +1,18 @@
+9/11/19
+
+xG_shots
+
+Description: The basic xG calculation (goals/shots) multiplied by the average number of shots.
+
+Method: 
+	Bot design: Shot/game average is simple division of total shots by games played. xG_shots is (goals/shots)*avg_shots. Shot stats from whoscored. Bot code is identical for simple xG with the xG_shot .csv fed in.
+	Test: Generated a prediction .csv for the 11 gws of 2019/20. Prediction accuracy calculated from testingBox.
+
+Results:
+1:4, 2:5, 3:4, 4:3, 5:5, 6:4, 7:5, 8:3, 9:6, 10:4, 11:6
+Over 11 weeks, the modified shots bot predicted 49/110 games, for 45% accuracy.
+For comparison, the original is currently at 46/110, for 42% accuracy.
+
+Conclusion: The shot average xG has performed only marginally better over 11 weeks, but the difference is only 3 games. It is worth noting that the bot is predominantly weighted to the 18/19 xG numbers. It may be that the innacuracy of 'old numbers' is dominating over any improvement in prediction.
+
+Future: --Modify weighting of xG numbers --Modify shots taken prediction to the shots allowed of the other team. --Redo xG to take shot location into account.
